@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
+
+  
+  th {
+    background-color: #886CC0;
+    border-top: solid 2px #886CC0;
+    border-bottom: solid 2px #886CC0;
+  }
+  tr:nth-child(odd) {
+    background-color: gray;
+  }
+  th, td {
+    padding: 0.5rem;
+  }
+  td:hover {
+    background-color: #b89dee;
+  }
+  
+  .paginate_button {
+    border-radius: 0 !important;
+  }
+
+  table{
+    font-family:  'Poppins', sans-serif;
+    color: black;
+    border-radius: 10px;
+    border: solid 5px black;
+    background-color: rgb(255, 255, 255);
+  }
+
+  .tabla{
+    margin-inline: auto;
+    width: 700px;
+    height: 200px;
+  }
+
+
+  body.dark th {
+    background-color: black;
+    color: white;
+   border: none;
+  }
+  body.dark tr:nth-child(odd) {
+    background-color: gray;
+  }
+  body.dark th, td {
+    padding: 0.5rem;
+  }
+  body.dark td:hover {
+    background-color: lightgray;
+  }
+  
+  body.dark .paginate_button {
+    border-radius: 0 !important;
+    color: white;
+  }
+
+  body.dark table{
+    font-family:  'Poppins', sans-serif;
+    color: black;
+    border-radius: 10px;
+    border: solid 4px white;
+  }
+
+  body.dark .tabla{
+    margin-left: 50px;
+    width: 500px;
+    height: 200px;
+  }
+
+  body.dark .tbody{
+    border-radius: 20px;
+    border: solid 1px black;
+  }
+
+  label{
+    color: white;
+  }
+  
+  .dataTables_info{
+    color: white;
+  }
+
+  .editar-btn .eliminar-btn{
+    height: 800px;
+    width: 800px;
+  }
+
+  button{
+    border: none;
+  }

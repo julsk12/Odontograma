@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
+
+.tooltip1 {
+  position: relative;
+  float   : right;
+}
+
+.tooltip1>.tooltip1-inner {
+  background-color: #fff;
+  padding         : 5px 15px;
+  color           : rgb(0, 0, 0);
+  font-weight     : bold;
+  font-size       : 13px;
+}
+
+.popOver1+.tooltip1>.tooltip1-arrow {
+  border-left : 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top  : 5px solid #fff;
+}
+
+.progress {
+  border-radius: 11px;
+  overflow     : visible;
+}
+
+.progress-bar {
+  background        : rgb(0, 77, 136);
+  -webkit-transition: width 1.5s ease-in-out;
+  transition        : width 1.5s ease-in-out;
+  justify-content   : center;
+  border-radius     : 5px;
+}
+
+
+.container1 {
+  border          : solid 2px #70cef3;
+  width           : 600px;
+  height          : 500px;
+  justify-content : center;
+  align-items     : center;
+  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg');
+  background-color: #70cef3;
+  border-radius   : 6px;
+  margin: 20px;
+}
+
+.row1 {
+  margin-top: 10%;
+  position  : relative;
+}
+
+.barWrapper {
+  align-items: center;
+  position   : relative;
+  width      : 500px;
+  top        : 50%;
+  margin-left: 5%;
+}
+
+body {
+  font-family     : 'Poppins', sans-serif;
+  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg');
+  background-color: #fff;
+}
+
+@keyframes progress-bar-stripes {
+  0% {
+    background-position-x: 1rem;
+  }
+}
+
+.progress1 {
+  display         : flex;
+  height          : 1rem;
+  overflow        : hidden;
+  font-size       : 0.65625rem;
+  background-color: #e9ecef;
+  border-radius   : 1.25rem;
+}
+
+.progress-bar1 {
+  display         : flex;
+  flex-direction  : column;
+  justify-content : center;
+  overflow        : hidden;
+  color           : #fff;
+  text-align      : center;
+  white-space     : nowrap;
+  background-color: #886CC0;
+  transition      : width 0.6s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress-bar1 {
+    transition: none;
+  }
+}
+
+.progress-bar-striped {
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size : 1rem 1rem;
+}
+
+.progress-bar-animated {
+  animation: 1s linear infinite progress-bar-stripes;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress-bar-animated {
+    animation: none;
+  }
+}
+
+.progress1 {
+  vertical-align: baseline;
+}
+
+.default-progress {
+  height: 0.625rem;
+}
+
+.progress1 {
+  height          : 6px;
+  background-color: #f6f6f6;
+  overflow        : hidden;
+}
+
+[data-theme-version="dark"] .progress {
+  background-color: #161717;
+}
+
+.progress-bar1 {
+  border-radius: 1.25rem;
+}
+
+.progress-animated {
+  animation-duration: 5s;
+  animation-name    : myanimation;
+  transition        : all 5s ease 0s;
+}
+
+.card2 {
+  position        : relative;
+  display         : flex;
+  flex-direction  : row;
+  flex-wrap: wrap;
+  min-width       : 0;
+  word-wrap       : break-word;
+  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg');
+  background-color: #70cef3;
+  background-clip : border-box;
+  border          : 1px solid rgba(0, 0, 0, 0.125);
+  border-radius   : 1.25rem;
+  width: 350px;
+  font-family     : 'Poppins', sans-serif;
+  height: max-content;
+  margin:10px;
+}
+
+#columnChart > div{
+  width: 50%;
+}
+#colum{
+  width: 50%;
+}
+.ay{
+  width: 200px;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+  margin-top: 30%;
+  font-family     : 'Poppins', sans-serif;
+
+}
+
+#ee{
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  float: left;
+}
+#aaa{
+  width: 45%;
+  float: right;
+  margin-top      : 4%;
+}
+
+.barra{
+  margin: 0 auto;
+  height: 20px;
+  width: 70%;
+  background: gray;
+  border-radius: 50px;
+  overflow: hidden;
+}
+.progreso{
+  display: block;
+  width: 50%;
+  height: 100%;
+  border-radius: 50px;
+
+  background-image: linear-gradient(-45deg,
+  #70cef3 25%,
+  white 25%,
+  white 50%,
+  #70cef3 50%,
+  #70cef3 75%,
+  white 75%,
+  white
+  );
+  background-size: 50px 50px;
+
+  animation: load 1s infinite linear;
+}
+@keyframes load {
+  0%{
+    background-position: 0 0;
+  }
+  100%{
+    background-position: 50px 50px;
+  }
+}
+
+.card3 {
+  position        : relative;
+  display         : flex;
+  flex-direction  : row;
+  flex-wrap: wrap;
+  min-width       : 0;
+  word-wrap       : break-word;
+  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg');
+  background-color: #70cef3;
+  background-clip : border-box;
+  border          : 1px solid rgba(0, 0, 0, 0.125);
+  border-radius   : 1.25rem;
+  width: 350px;
+  font-family     : 'Poppins', sans-serif;
+  height: max-content;    margin-top: 170px;
+  margin-left: -360px;
+}
+
+.date{
+  padding: 20px;
+  height: 30px;
+  margin-top: 30px;
+  font-family     : 'Poppins', sans-serif;
+}
+.progressText1{
+  font-family     : 'Poppins', sans-serif;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+#consul{
+  background-color: white;
+  color: black;
+  font-family     : 'Poppins', sans-serif;
+  margin-left: 5px;
+}

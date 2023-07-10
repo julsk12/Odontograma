@@ -1,0 +1,67 @@
+{% extends '/main/homesecretaria.html' %}
+{% block body %}
+<!-- Latest compiled and minified JavaScript -->
+<div class="form-body">
+    <div class="row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <h3>Bienvenido al formulario de tratamientos</h3>
+                    <p>Si desea agregar un nuevo item llene el formulario.</p>
+                    <form class="requires-validation" novalidate>
+                        <div class="col-md-12">
+                            <input id="nombre"
+                                class="form-control"
+                                type="text"
+                                name="nombre"
+                                placeholder="Nombre del tratamiento"
+                                required
+                            >
+                            <div class="valid-feedback">Nombre es valido!</div>
+                            <div class="invalid-feedback">Campo nombre no es valido!</div>
+                        </div>
+                        <div class="col-md-12">
+                            <input id="descripcion"
+                                class="form-control"
+                                type="text"
+                                name="descripcion"
+                                placeholder="Descripción"
+                                required
+                            >
+                            <div class="valid-feedback">Descripción es valido!</div>
+                            <div class="invalid-feedback">descripcion no puede estar en blanco!</div>
+                        </div>
+                        <div class="col-md-12">
+                            <input id="duracion"
+                                class="form-control"
+                                type="text"
+                                name="duracion"
+                                placeholder="Duracion"
+                                required
+                            >
+                            <div class="valid-feedback">Duracion es valida!</div>
+                            <div class="invalid-feedback">El campo duracion no puede estar vacio!</div>
+                        </div>
+                        <div class="col-md-12">
+                            <input id="costo"
+                                class="form-control"
+                                type="text"
+                                name="costo"
+                                placeholder="Costo"
+                                required
+                            >
+                            <div class="valid-feedback">Costo es valida!</div>
+                            <div class="invalid-feedback">El campo costo no puede estar vacio!</div>
+                        </div>
+                        <div class="form-button mt-3">
+                            <button zid="submit" type="submit" class="btn btn-primary">Agendar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+{% endblock %}

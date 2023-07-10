@@ -1,0 +1,130 @@
+/* Estilos para el modal */
+
+.modal1 {
+    align-items: center;
+    justify-content: center;
+    display: none;
+    /* Oculta el modal por defecto */
+    position: fixed;
+    /* Posición fija para el modal */
+    z-index: 2;
+    /* Hace que el modal aparezca por encima de todo lo demás */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /* Añade scroll si el contenido del modal es muy largo */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Fondo negro semitransparente para el modal */
+}
+
+.modal-content1 {
+    background-color: #30d6ff;
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: 300%;
+    border-radius: 6px;
+    margin: 15% auto;
+    /* Centra el modal verticalmente y lo desplaza hacia abajo */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 650px;
+    border-radius: 10px;
+}
+
+body {
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+/* Estilos para el botón de cerrar */
+
+.close1 {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.mensaje1 {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 100%;
+}
+
+.close1:focus,
+.close1:hover {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn1 {
+    left: 0;
+    justify-items: center;
+    align-items: center;
+    background-color: #fff;
+}
+
+.btn1 {
+    justify-items: center;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+}
+
+#buttons-container{
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-top: 20%;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    justify-items: center;
+    display: flex;
+    align-items: center;
+}
+
+.form-control {
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    margin-top: 5px;
+}
+
+input[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}

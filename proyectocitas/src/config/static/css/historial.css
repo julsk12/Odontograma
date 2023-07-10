@@ -1,0 +1,38 @@
+#card {
+    background-color: rgb(255, 255, 255);
+    position: sticky;
+    width: -webkit-fill-available;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 200px;
+    margin-top: 100px;
+    border: 5px solid #94deec !important; 
+    border-radius: 10px !important;
+}
+
+.atri{
+    position: relative;
+    margin-right: 70%;
+    text-align-last: left;
+}
+
+.titulo{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container12{
+    margin: 5%;
+}
+
+textarea{
+    border: none;
+    height: 700px;
+    width: -webkit-fill-available;
+    text-align: left;
+    background-color: white;
+    color: black;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}

@@ -1,0 +1,907 @@
+{% extends "main/Layouts/Layout.html" %}
+{% block body %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/SIBAO/Odontograma.css')}}">
+<script src="{{url_for('static', filename='js/SIBAO/Odontograma.js')}}"></script>
+  <!--     *******************
+        Preloader start
+    ********************     -->
+	<div id="preloader">
+		<div class="lds-ripple">
+		  <div></div>
+		  <div></div>
+		</div>
+	  </div>
+	  <!--     *******************
+			Preloader end
+		********************     -->
+	
+	  <!--     **********************************
+			Main wrapper start
+		***********************************     -->
+	  <div id="main-wrapper">
+		<!--     **********************************
+				Nav header start
+			***********************************     -->
+		<div class="nav-header">
+		  <a href="index.html" class="brand-logo">
+			<svg class="logo-abbr" width="55" height="55" viewbox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+			  <path fill-rule="evenodd" clip-rule="evenodd" d="M27.5 0C12.3122 0 0 12.3122 0 27.5C0 42.6878 12.3122 55 27.5 55C42.6878 55 55 42.6878 55 27.5C55 12.3122 42.6878 0 27.5 0ZM28.0092 46H19L19.0001 34.9784L19 27.5803V24.4779C19 14.3752 24.0922 10 35.3733 10V17.5571C29.8894 17.5571 28.0092 19.4663 28.0092 24.4779V27.5803H36V34.9784H28.0092V46Z" fill="url(#paint0_linear)"></path>
+			  <defs></defs>
+			</svg>
+			<div class="brand-title">
+			  <h2 class="">ODONTOGRAMA</h2>
+			</div>
+		  </a>
+		  <div class="nav-control">
+			<div class="hamburger">
+			  <span class="line"></span><span class="line"></span><span class="line"></span>
+			</div>
+		  </div>
+		</div>
+		<!--     **********************************
+				Nav header end
+			***********************************     -->
+	
+		<!--     **********************************
+				Chat box start
+			***********************************     -->
+	
+		<!--     **********************************
+				Chat box End
+			***********************************     -->
+	
+		<!--     **********************************
+				Header start
+			***********************************     -->
+	
+		<div class="header border-bottom">
+		  <div class="header-content">
+			<nav class="navbar navbar-expand">
+			  <div class="collapse navbar-collapse justify-content-between">
+				<div class="header-left">
+				  <div class="dashboard_bar">Dashboard</div>
+				</div>
+				<ul class="navbar-nav header-right">
+				  <li class="nav-item d-flex align-items-center">
+					<div class="input-group search-area">
+					  <input type="text" class="form-control" placeholder="Search here..." />
+					  <span class="input-group-text"><a href="javascript:void(0)"><i class="flaticon-381-search-2"></i></a></span>
+					</div>
+				  </li>
+	
+				  <li class="nav-item dropdown header-profile">
+					<a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown"><img src="{{ url_for('static', filename = '/assets/images/user.jpg') }}" width="56" alt="" /></a>
+					<div class="dropdown-menu dropdown-menu-end">
+					  <a href="/fronted/indexlogin" class="dropdown-item ai-icon">
+						<svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						  <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+						  <polyline points="16 17 21 12 16 7"></polyline>
+						  <line x1="21" y1="12" x2="9" y2="12"></line>
+						</svg>
+						<span class="ms-2">Logout</span>
+					  </a>
+					</div>
+				  </li>
+				</ul>
+			  </div>
+			</nav>
+		  </div>
+		</div>
+		<!--     **********************************
+				Header end ti-comment-alt
+			***********************************     -->
+	
+		<!--     **********************************
+				Sidebar start
+			***********************************     -->
+		<div class="dlabnav">
+		  <div class="dlabnav-scroll">
+			<ul class="metismenu" id="menu">
+			  <li>
+				<a class="has-arrow" href="javascript:void()" aria-expanded="false">
+				  <i class="fas fa-home"></i>
+				  <span class="nav-text">Dashboard</span>
+				</a>
+				<ul aria-expanded="false">
+				  <li>
+					<a href="indexHomeIndexLight">Principal</a>
+				  </li>
+	
+				  <ul aria-expanded="false"></ul>
+				</ul>
+			  </li>
+	
+			  <li>
+				<a class="has-arrow" href="javascript:void()" aria-expanded="false">
+				  <i class="fas fa-info-circle"></i>
+				  <span class="nav-text">Odontología</span>
+				</a>
+				<ul aria-expanded="false">
+				  <li>
+					<a href="IndexCita">Citas</a>
+				  </li>
+				  <li>
+					<a href="IndexOdontograma">Odontograma</a>
+				  </li>
+				  <li>
+					<a href="IndexTratamientos">Tratamientos</a>
+				  </li>
+				</ul>
+			  </li>
+	
+			  <li>
+				<a class="has-arrow" href="javascript:void()" aria-expanded="false">
+				  <i class="fas fa-user-check"></i>
+	
+				  <span class="nav-text">Usuarios</span>
+				</a>
+				<ul aria-expanded="false">
+				  <li>
+					<a href="IndexDentistas">Dentistas</a>
+				  </li>
+				  <li>
+					<a href="IndexPacientes">Pacientes</a>
+				  </li>
+				</ul>
+			  </li>
+			  <li>
+				<a class="has-arrow" href="javascript:void()" aria-expanded="false">
+				  <i class="fas fa-file-alt"></i>
+				  <span class="nav-text">Resumen</span>
+				</a>
+				<ul aria-expanded="false">
+				  <li>
+					<a href="IndexHistorial">Historial</a>
+				  </li>
+				</ul>
+			  </li>
+			</ul>
+		  </div>
+		</div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+		
+		<!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+            <!-- row -->
+			<div class="container-fluid">
+				<!---AQUI EMPIEZA EL BODY  DEL CÓDIGO DE ODODNTOGRAMAS-->
+					<!--Odontograma-->
+					<div class="container-odontograma">
+							<div class="columna">
+								<br >
+								<div class="container" id="con1">
+									<br>
+									<figure class="full-box" id='paciente'>
+										<img id="img" src="{{url_for('static', filename='/assets/avatars/User.png')}}" alt="UserIcon">
+										<p class="text-center info" id="iduser">Identificacion</p>
+										<p class="identificacion" value="" id="nameuser">Nombre</p>
+									</figure>
+								</div>
+								<div class="container" id="con2">
+									<h1 class="modal-title fs-5" id="titulo">HISTORIAL</h1>
+									<br>
+									<br>
+									<br>
+									<!-- DATOS DE LAS OBSERVACIONES -->
+	
+								</div>
+							</div>
+							<div class="columna">
+								<br>
+								<div class="container" id="con3">
+									<br>
+									<div id="grid">
+										<p class="numero">18</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="18" value="18">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numero">17</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="17" value="17">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numero">16</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="16" value="16">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numero">15</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="15" value="15">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numero">14</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="14" value="14">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numero">13</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="13" value="13">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numero">12</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="12" value="12">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numero">11</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="11" value="11">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numero">21</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="21" value="21">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numero">22</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="22" value="22">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numero">23</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="23" value="23">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numero">24</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="24" value="24">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numero">25</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="25" value="25">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numero">26</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="26" value="26">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numero">27</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="27" value="27">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numero">28</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="28" value="28">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+									</div>
+									<div id="grid">
+										<p class="numeromedio">55</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="55" value="55">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numeromedio">54</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="54" value="54">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numeromedio">53</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="53" value="53">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numeromedio">52</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="52" value="52">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numeromedio">51</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="51" value="51">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numeromedio">61</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="61" value="61">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numeromedio">62</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="62" value="62">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numeromedio">63</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="63" value="63">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numeromedio">64</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="64" value="64">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numeromedio">65</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="65" value="65">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+									</div>
+									<div id="grid">
+										<p class="numeromedio">85</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="85" value="85">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numeromedio">84</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="84" value="84">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numeromedio">83</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="83" value="83">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numeromedio">82</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="82" value="82">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numeromedio">81</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="81" value="81">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numeromedio">71</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="71" value="71">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numeromedio">72</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="72" value="72">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numeromedio">73</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="73" value="73">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numeromedio">74</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="74" value="74">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numeromedio">75</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="75" value="75">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+									</div>
+									<div id="grid">
+										<p class="numero">48</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="48" value="48">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numero">47</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="47" value="47">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numero">46</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="46" value="46">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numero">45</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="45" value="45">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numero">44</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="44" value="44">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numero">43</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="43" value="43">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numero">42</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="42" value="42">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numero">41</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="41" value="41">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numero">31</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="31" value="31">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numero">32</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="32" value="32">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numero">33</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="33" value="33">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numero">34</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="34" value="34">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numero">35</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="35" value="35">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numero">36</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="36" value="36">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numero">37</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="37" value="37">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+										<p class="numero">38</p>
+										<div class="tooth-wrapper">
+											<div class="tooth" id="38" value="38">
+												<div class="tooth-part part-0" data="0"></div>
+												<div class="tooth-part part-1" data="1"></div>
+												<div class="tooth-part part-2" data="2"></div>
+												<div class="tooth-part part-3" data="3"></div>
+												<div class="tooth-part part-4" data="4"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<br>
+								<div class="container" id="con4">
+									<h1 id="tituloestado" class="modal-title fs-5">ESTADO Y PRACTICA</h1>
+									<div class="cuadrocolor"><p class="letracolor" style="font-size: 14px;">Amalgama <div class="color" value="1" style="background-color:red;"></div></p></div>
+									<div class="cuadrocolor"><p class="letracolor" style="font-size: 14px;">Caries <div class="color" value="2" style="background-color:yellow;"></div></p></div>
+									<div class="cuadrocolor"><p class="letracolor" style="font-size: 14px;">Endodoncia <div class="color" value="3" style="background-color:orange;"></div></p></div>
+									<div class="cuadrocolor"><p class="letracolor" style="font-size: 14px;">Ausente <div class="color" value="4" style="background-color:tomato;"></div></p></div>
+									<div class="cuadrocolor"><p class="letracolor" style="font-size: 14px;">Resina <div class="color" value="5" style="background-color:#CC6600;"></div></p></div>
+									<div class="cuadrocolor"><p class="letracolor" style="font-size: 14px;">Implante <div class="color" value="6" style="background-color:#CC66CC;"></div></p></div>
+									<div class="cuadrocolor"><p class="letracolor" style="font-size: 14px;">Sellante <div class="color" value="7" style="background-color:green;"></div></p></div>
+									<div class="cuadrocolor"><p class="letracolor" style="font-size: 14px;">Corona <div class="color" value="8" style="background-color:blue;"></div></p></div>
+									<div class="cuadrocolor"><p class="letracolor" style="font-size: 14px;">Normal <div class="color" value="9" style="background-color:black;"></div></p></div>
+								</div>
+								<button id="btnguardar" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+									Guardar Registro
+								</button>
+								<a id="btnfacturar" class="btn btn-primary" type="button">Facturar</a>
+								<a id="btnimprimir" class="btn btn-success" type="button">Imprimir</a>
+
+																<!-- Modal -->
+								<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+									<div class="modal-dialog">
+									<div class="modal-content" id="contenidomodal">
+										<div class="modal-header">
+										<h1 class="modal-title fs-5" id="staticBackdropLabel">OBSERVACION</h1>
+										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+										</div>
+										<div class="modal-body">	
+											<div class="container" id="con6">
+												<div class="input-container">
+													<label for="fecha" style="margin-top: 3%">Fecha:</label>
+													<input type="date" id="fecha" name="fecha" class="input-date" style="width: 36%; margin-top: 3%; margin-left: 50%;" required>
+												  </div>
+												  <br>
+												  <div class="input-group mb-3">
+													<input type="text" id="tratamiento" class="form-control" placeholder="Tratamiento" aria-label="Username" aria-describedby="basic-addon1">
+												  </div>
+												  <select id="numerodiente" class="form-select" aria-label="Default select example" required>
+													<option value="0" selected>Seleccione Numero del Diente</option>
+												  </select>
+												  <br>
+												  <select id="secciondiente" class="form-select" aria-label="Default select example" required>
+													<option value="0" selected>Seleccione seccion del Diente</option>
+													<option value="Mesial">Mesial</option>
+													<option value="Distal">Distal</option>
+													<option value="Oclusal">Oclusal</option>
+													<option value="vestibular">vestibular</option>
+												  </select>
+												  <br>
+												  <select id="estadodiente" class="form-select" aria-label="Default select example" required>
+													<option value="0" selected>Seleccione el estado del Diente</option>
+													<option value="Amalgama">Amalgama</option>
+													<option value="Caries">Caries</option>
+													<option value="Endodoncia">Endodoncia</option>
+													<option value="Ausente">Ausente</option>
+													<option value="Resina">Resina</option>
+													<option value="Implante">Implante</option>
+													<option value="Sellante">Sellante</option>
+													<option value="Corona">Corona</option>
+													<option value="Normal">Normal</option>
+												  </select>
+												<input id="observaciondiente" class="input-group-text" type="text-area" style="margin-top: 5%; width: 99.59%; height: 100px" placeholder="Observaciones" required>
+											</div>
+											<br>
+											<a id="btnenviar" class="btn btn-secondary" type="button" class="btn-close" onclick="guardardiente()">Enviar</a>
+										</div>
+									</div>
+									</div>
+								</div>
+								<!--fin modal-->							
+		
+							</div>
+					</div>
+					<!--Fin Odontograma-->	
+            </div>
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+	</div>
+<script>
+const toothParts = document.querySelectorAll('.tooth-part');
+
+// Agregar un manejador de eventos "click" a cada parte del diente
+toothParts.forEach((part) => {
+  part.addEventListener('click', () => {
+    // Obtener el valor del color seleccionado
+    const selectedColor = document.querySelector('.selected-color');
+    const colorValue = selectedColor.getAttribute('value');
+
+	const toothNumber = part.parentElement.getAttribute('value');
+    const partNumber = part.getAttribute('data');
+    // Aplicar el color seleccionado a la parte del diente
+    selectColor({ toothNumber, partNumber }, colorValue);
+    part.style.backgroundColor = selectedColor.style.backgroundColor;
+    part.setAttribute('data-color', colorValue);
+    if (colorValue === '9') {
+      part.style.backgroundColor = 'white';
+    } else if (colorValue === '8') {
+      const toothNumber = part.parentElement.getAttribute('value');
+      const selectedParts = document.querySelectorAll(`.tooth[value="${toothNumber}"] .tooth-part`);
+      // Aplicar el color seleccionado a todas las partes correspondientes
+      selectedParts.forEach((p) => {
+        p.style.backgroundColor = selectedColor.style.backgroundColor;
+        p.setAttribute('data-color', colorValue);
+      });
+    } else if (colorValue === '7') {
+      const toothNumber = part.parentElement.getAttribute('value');
+      const selectedParts = document.querySelectorAll(`.tooth[value="${toothNumber}"] .tooth-part`);
+      // Aplicar el color seleccionado a todas las partes correspondientes
+      selectedParts.forEach((p) => {
+        p.style.backgroundColor = selectedColor.style.backgroundColor;
+        p.setAttribute('data-color', colorValue);
+      });
+    } else if (colorValue === '6') {
+      const toothNumber = part.parentElement.getAttribute('value');
+      const selectedParts = document.querySelectorAll(`.tooth[value="${toothNumber}"] .tooth-part`);
+      // Aplicar el color seleccionado a todas las partes correspondientes
+      selectedParts.forEach((p) => {
+        p.style.backgroundColor = selectedColor.style.backgroundColor;
+        p.setAttribute('data-color', colorValue);
+      });
+    }
+  });
+});
+
+// Obtener todas las celdas de colores
+const colorCells = document.querySelectorAll('.color');
+
+// Agregar un manejador de eventos "click" a cada celda de color
+colorCells.forEach((cell) => {
+  cell.addEventListener('click', () => {
+    // Remover la clase "selected-color" de todas las celdas de color
+    colorCells.forEach((c) => {
+      c.classList.remove('selected-color');
+    });
+
+    // Agregar la clase "selected-color" a la celda de color seleccionada
+    cell.classList.add('selected-color');
+  });
+});
+/*funcion para mostrar numeros de los dientes*/
+		var selectElement = document.getElementById('numerodiente');
+
+		var ranges = [
+		  { start: 18, end: 11 },
+		  { start: 21, end: 28 },
+		  { start: 55, end: 51 },
+		  { start: 61, end: 65 },
+		  { start: 85, end: 81 },
+		  { start: 71, end: 75 },
+		  { start: 48, end: 41 },
+		  { start: 31, end: 38 }
+		];
+		
+		for (var i = 0; i < ranges.length; i++) {
+		  var range = ranges[i];
+		  var step = range.start > range.end ? -1 : 1; // Determinar el paso (ascendente o descendente)
+		  for (var j = range.start; j !== range.end + step; j += step) {
+			var option = document.createElement('option');
+			option.value = j;
+			option.text = j;
+			selectElement.appendChild(option);
+		  }
+		}
+		var modal = document.getElementById("staticBackdrop");
+		window.addEventListener("click", function(event) {
+			// Verificar si se hizo clic fuera del modal
+			if (event.target == modal) {
+			  $(modal).modal('hide');
+			    // Cerrar el modal al hacer clic en el botón "Cerrar"
+			}
+		  });
+</script>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="{{url_for('static', filename='js/SIBAO/Home.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    {% endblock %}

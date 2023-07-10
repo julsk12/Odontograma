@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home odontologo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css" />
+    <link rel="stylesheet" href="{{url_for('static',filename='../static/css/consultar.css')}}">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+    <link rel="stylesheet" href="{{ url_for('static', filename = '../static/css/homepacciente.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename = '../static/css/csese.css') }}" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css">
+	  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
+  </head>
+  <body>
+    <div class="navigation-wrap bg-light start-header start-style">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <nav class="navbar navbar-expand-md navbar-light">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+              <div class="navnav" id="">
+                <ul class="navbar-nav ml-auto py-4 py-md-0" style="display: -webkit-inline-box;">
+                  
+                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                    <a class="nav-link" href="/fronted/indexestadisticas">Estadisticas</a>
+                  </li>
+                  
+                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                    <a class="nav-link" href="/fronted/indexmidato">Mis datos</a>
+                  </li>
+                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                    <a class="nav-link" href="/fronted/indexcalendario">Directorio</a>
+                  </li>
+                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 active" >
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Perfil</a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="/fronted/indexactu">Actualizar datos</a>
+                      <a class="dropdown-item" href="/">Cerrar sesion</a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% block body %}
+      <div class="section full-height">
+        <div class="absolute-center">
+          <div class="section">
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  <h1>
+                    <span>C</span>
+                    <span>I</span>
+                    <span>T</span>
+                    <span>A</span>
+                    <span>S</span>
+                    <span></span>
+                    <span>D</span>
+                    <span>E</span>
+                    <span></span>
+                    <span>H</span>
+                    <span>O</span>
+                    <span>Y</span>
+                    <br />
+                  </h1>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="section mt-5">
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  <div id="switch">
+                    <div id="circle"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endblock %}
+    <a href="https://front.codes/" class="logo" target="_blank"></a>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename = '../../static/js/actualizar.js') }}"></script>
+    <script src="{{ url_for('static', filename = '../../static/js/homepaciente.js') }}"></script>
+    <script src="{{ url_for('static', filename = '../../../../static/js/estadisticas.js')}}"></script>
+    <script src="{{url_for('static', filename='../../static/js/login.js')}}"></script>
+    <script src="{{url_for('static', filename='../../static/js/misdatos.js')}}"></script>
+    <script src="{{url_for('static', filename='../../static/js/actualizar.js')}}"></script>
+    <script src="{{url_for('static', filename='../../static/js/consultar.js')}}"></script>
+
+</body>
+  </body>
+</html>

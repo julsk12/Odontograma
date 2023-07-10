@@ -1,0 +1,23 @@
+.titulo {
+    font-weight: 900;
+    font-size: xxx-large;
+    display: flex;
+}
+
+.info {
+    position: absolute;
+    padding: 30px;
+    padding-top: 40px;
+}
+.subs{
+    font-weight: 400;
+    display: flex;
+    font-size: large;
+}
+
+.datos{
+    font-weight: 600;
+    font-size: xx-large;
+    display: flex;
+}
+

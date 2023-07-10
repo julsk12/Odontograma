@@ -1,0 +1,57 @@
+{% extends '/main/homepaciente.html' %}
+{% block body %}
+  <!-- Latest compiled and minified JavaScript -->
+  <div class="form-body">
+    <div class="row">
+      <div class="form-holder">
+        <div class="form-content">
+          <div class="form-items">
+            <h3>Bienvenido, agende su cita hoy</h3>
+            <p>Llene el formulario.</p>
+            <form class="requires-validation" novalidate>
+              <div class="col-md-12">
+                <input id="identificacion" class="form-control" type="text" name="identificacion" placeholder="Identificación" required />
+                <div class="valid-feedback">Identificacion es valido!</div>
+                <div class="invalid-feedback">Campo identificacion no es valido!</div>
+              </div>
+              <div class="col-md-12">
+                <input id="especialidad" class="form-control" type="text" name="especialidad" placeholder="Especialidad" required />
+                <div class="valid-feedback">Especialidad es valido!</div>
+                <div class="invalid-feedback">Especialidad no puede estar en blanco!</div>
+              </div>
+              <br />
+              <div id="pos" class="pos">
+
+              </div>
+              <br />
+              <div class="col-md-12">
+                <input id="fecha" class="form-control" type="date" name="fecha" placeholder="Fecha" required />
+                <div class="valid-feedback">Fecha es valida!</div>
+                <div class="invalid-feedback">El campo fecha no puede estar vacio!</div>
+              </div>
+              <div class="col-md-12">
+                <input id="hora" class="form-control" type="time" name="hora" placeholder="hora" required />
+                <div class="valid-feedback">Hora es valida!</div>
+                <div class="invalid-feedback">El campo Hora no puede estar vacio!</div>
+              </div>
+              <div class="col-md-12">
+                <select id="sede" class="form-select mt-3" required>
+                  <option selected disabled value="">Sede</option>
+                  <option value="Soledad">Soledad</option>
+                  <option value="Barranquilla">Barranquilla</option>
+                  <option value="Nose">Nose</option>
+                </select>
+                <div class="valid-feedback">Seleccionaste una sede!</div>
+                <div class="invalid-feedback">Por favor selecciona una sede!</div>
+              </div>
+              <div class="form-button mt-3">
+                <button onclick="return validateForm()" class="boton" id="submit">Agendar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
