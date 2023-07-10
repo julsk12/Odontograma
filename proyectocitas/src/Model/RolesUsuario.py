@@ -8,25 +8,9 @@ class RolesUsuarios(db.Model):
 
     def __init__(self, roles):
         self.roles = roles
-        
-def create_roles():
-    #verificamos si ya xien registros en la tabla
-    if RolesUsuarios.query.count() == 0:
-        #Crear registro de roles
-        rolsecretaria = RolesUsuarios('Secretaria')
-        rolodontologo = RolesUsuarios('Odontologo')
-        rolpaciente = RolesUsuarios('Paciente')
-        #Guardamos los registros
-        db.session.add(rolsecretaria)
-        db.session.add(rolodontologo)
-        db.session.add(rolpaciente)
-        db.session.commit()
 
-
-with app.app_context():
-   db.create_all()
-   create_roles()
-
+        with app.app_context():
+            db.create_all()
 
 class RolesSchema(ma.Schema):
     class Meta:

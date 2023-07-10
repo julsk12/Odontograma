@@ -7,23 +7,28 @@ from common.Toke import *
 
 
 from api.roles import routes_roles
-from api.facturas import routes_facturas
 from api.pago import  routes_pagos
-from api.tratamientos import routes_tratamientos
 from api.Deta_pagos import routes_dpagos
+from api.tratamientos import routes_tratamientos
+from api.facturas import routes_facturas
 from api.citas import routes_citas
+from api.odontograma import routes_odonto
+from api.dientes import routes_dientes
+from api.HistorialClinico import routes_historial
 from api.user import routes_user
-
 
 from rutas.home import routes_home
 from rutas.agencita import routes_agencitas
 
 app.register_blueprint(routes_roles, url_prefix="/api")
-app.register_blueprint(routes_pagos, url_prefix="/api")
-app.register_blueprint(routes_facturas, url_prefix="/api")
-app.register_blueprint(routes_citas, url_prefix="/api")
 app.register_blueprint(routes_tratamientos, url_prefix="/api")
 app.register_blueprint(routes_user, url_prefix="/api")
+app.register_blueprint(routes_citas, url_prefix="/api")
+app.register_blueprint(routes_pagos, url_prefix="/api")
+app.register_blueprint(routes_facturas, url_prefix="/api")
+app.register_blueprint(routes_odonto, url_prefix="/api")
+app.register_blueprint(routes_historial, url_prefix="/api")
+app.register_blueprint(routes_dientes, url_prefix="/api")
 app.register_blueprint(routes_dpagos, url_prefix="/api")
 app.register_blueprint(routes_home, url_prefix="/fronted")
 app.register_blueprint(routes_agencitas, url_prefix="/fronted")

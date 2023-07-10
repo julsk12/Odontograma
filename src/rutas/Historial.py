@@ -9,7 +9,7 @@ from Model.Usuarios import Users, UsuariosSchema
 def IndexHistorial():
     id_roles = int(request.cookies.get('id_roles'))  # Obtener el valor de 'id_roles' de la cookie
 
-    if id_roles == 2:
+    if id_roles == 1 & 2:
         return render_template('/main/Historial.html')
     else:
         abort(401)  # Acceso no autorizado

@@ -1,10 +1,9 @@
 from config.db import db, app, ma
-from flask import Blueprint, Flask,  redirect, request, jsonify, json, session, render_template, abort
+from flask import Blueprint, Flask,  redirect, request, jsonify, json, session, render_template,abort
 from datetime import datetime
 from Model.Odontogramas import Odon, OdontoSchema
 from Model.Usuarios import Users, UsuariosSchema
 routes_CitaPlantilla = Blueprint("routes_CitaPlantilla", __name__)
-
 
 @routes_CitaPlantilla.route('/IndexCita', methods=['GET'])
 def IndexCita():
@@ -16,34 +15,34 @@ def IndexCita():
         abort(401)  # Acceso no autorizado
 
 
-# ------------------------Aquí empizan la Validación del Token activo------------------------------
-
 @routes_CitaPlantilla.route('/checktoken', methods=['GET'])
 def checktoken():
     user_id = session.get('user_id')
     if user_id:
-        user = Users.query.get(user_id)
+        user = Registro.query.get(user_id)
 
         if user:
             print('Token Expiration:', user.token_expiration)
             now = datetime.now()
             print('Current Datetime:', now)
 
-            if user.token == request.headers.get('Authorization')[7:]:
+            auth_header = request.headers.get('Authorization', '')
+            token = auth_header.replace('Bearer ', '') if auth_header.startswith('Bearer ') else None
+
+            if user.token == token:
+                # El token coincide
                 if user.is_token_valid():
                     print('Is Token Valid: True')
                     return jsonify({'token_expired': False}), 200
 
-                # Token expired or does not exist, remove it from the user object
-                user.token = None
-                user.token_expiration = None
-                db.session.commit()  # Confirmar los cambios en la base de datos
+                # Token expirado, eliminarlo del objeto del usuario
+                user.delete_token()
                 print('Token deleted from user object')
+                return jsonify({'token_expired': True, 'token': user.token, 'token_expiration': user.token_expiration}), 401
 
     print('Is Token Valid: False')
     return jsonify({'token_expired': True}), 401
 
-# ------------------------Fin de la Validación del Token activo------------------------------
 
 @routes_CitaPlantilla.route('/consultargrama', methods=['GET'])
 def sal():

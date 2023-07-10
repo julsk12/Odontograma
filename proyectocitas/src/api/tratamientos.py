@@ -3,9 +3,9 @@ from common.Toke import *
 from config.db import db, app, ma
 
 from Model.Tratamientos import Trata, TratamientosSchema
-# from Model.Usuarios import Users
-# from Model.Odontogramas import Odon
-# from Model.Dientes import Diente
+from Model.Usuarios import Users
+from Model.Odontogramas import Odon
+from Model.Dientes import Diente
 
 routes_tratamientos = Blueprint("routes_tratamientos", __name__)
 
@@ -76,22 +76,22 @@ def mistrata():
     trato.append(datos)
     return jsonify(datos)
 
-# @routes_tratamientos.route('/mistratamientos', methods=['GET'])
-# def head():
-#     correo= session.get('correo_usuario')
-#     datos= {}
-#     resultado = (db.session.query(Users,Odon)
-#                  .filter(Users.correo == correo, 
-#                 Odon.id_paciente == Users.id).all())  
-#     trato = []
-#     i = 0
-#     for usuarios, donto in resultado:
-#         i += 1
-#         datos[i] = {
-#         'id':usuarios.id,
-# 		'nombre':usuarios.nombre,              
-#         'id_odontologo': donto.id_odontologo
-#         }
+@routes_tratamientos.route('/mistratamientos', methods=['GET'])
+def head():
+    correo= session.get('correo_usuario')
+    datos= {}
+    resultado = (db.session.query(Users,Odon)
+                 .filter(Users.correo == correo, 
+                Odon.id_paciente == Users.id).all())  
+    trato = []
+    i = 0
+    for usuarios, donto in resultado:
+        i += 1
+        datos[i] = {
+        'id':usuarios.id,
+		'nombre':usuarios.nombre,              
+        'id_odontologo': donto.id_odontologo
+        }
       
-#         trato.append(datos)
-#     return jsonify(datos)
+        trato.append(datos)
+    return jsonify(datos)
